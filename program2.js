@@ -4,7 +4,7 @@
  */
 var romanToInt = function(s) {
     var romanToInt = function(s) {
-        const romanLetter = {
+        const map = {
             'I': 1,
             'V': 5,
             'X': 10,
@@ -17,8 +17,8 @@ var romanToInt = function(s) {
         let res = 0;
     
         for (let i = 0; i < s.length; i++) {
-            let curr = romanLetter[s[i]];
-            let nex = romanLetter[s[i + 1]];
+            let curr = map[s[i]];
+            let nex = map[s[i + 1]];
     
             if (nex && curr < nex) {
                 res -= curr;
